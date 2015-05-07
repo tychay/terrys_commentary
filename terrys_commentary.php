@@ -33,7 +33,7 @@ class tccomment {
 		$tcc->run();
 	}
 	/**
-	 * does initializaiton of any variables
+	 * does initialization of any variables
 	 */
 	public function __construct() {
 		//$this->_this_dir = dirname( plugins_url( __FILE__ ) );
@@ -59,7 +59,7 @@ class tccomment {
 		if ( apply_filters( 'tccomment_add_default_css', true) ) {
 			wp_enqueue_style(
 				'tccomment_style',
-				plugins_url( 'default.css', __FILE__ ),
+				plugins_url( apply_filters( 'tccomment_default_css', 'fancy.css' ), __FILE__ ),
 				array(),
 				self::VERSION,
 				'all'
@@ -100,17 +100,18 @@ class tccomment {
 	 * @param  string $content just have
 	 * @return [type]          [description]
 	 */
-	static public function shortcode( $atts, $content = null ) {
-	  extract(shortcode_atts(
-	    array(
-	    "text" => null
-	    ), $atts)
-	  );
-	  return sprintf(
-	  	'<span title="%s" rel="tooltip">%s</span>',
-	  	esc_attr( $text ),
-	  	do_shortcode( $content )
-	  );
+	static public function shortcode( $atts, $content = null, $tag='' ) {
+		// extract() is very bad form for hack/hhvm
+		$atts = shortcode_atts( array(
+			"text" => null
+		), $atts);
+		$text = $atts['text'];
+		return sprintf(
+			'<span title="%s" rel="tooltip%s">%s</span>',
+			esc_attr( $text ),
+			( $tag == 'commentary' ) ? ' commentary' : '',
+			do_shortcode( $content )
+		);
 	}
 }
 
