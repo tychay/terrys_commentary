@@ -45,12 +45,16 @@
 	tooltip.close = function() {
 		// this is the $(tooltip)
 		
-		// clear out target
-		this.data('target',false);
+		var target = this.data( 'target' );
 		// animate closing and remove from DOM
 		this.animate( { top: '-=10', opacity: 0 }, 50, function() {
 			var self = $(this);
-			self.detach();
+			// if during animation we've switched targets, then don't close things out
+			if ( target == self.data('target') ) {
+				self.detach();
+				// clear out target
+				self.data('target',false);
+			}
 		});
 	};
 	// clicking on tooltip is equivalent to leaving target
