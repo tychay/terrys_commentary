@@ -101,6 +101,9 @@
 
 		$( '[rel~=tooltip]' ).on( 'mouseenter', targetMouseEnter )
 		                     .on( 'mouseleave', targetMouseLeave );
+		// backward compatiblility on my blog
+		$( '[class~=commentary]').on( 'mouseenter', targetMouseEnter )
+		                         .on( 'mouseleave', targetMouseLeave );
 	});
 
 } )( window, window.jQuery );
