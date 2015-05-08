@@ -1,5 +1,5 @@
 [rel~="tooltip"] {
-    cusor: pointer;
+    cursor: pointer;
     border-bottom: 1px dashed #ccc;
 }
 [rel="tooltip commentary"] {
