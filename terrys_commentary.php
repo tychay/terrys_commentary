@@ -50,16 +50,16 @@ class tccomment {
 			add_action( 'init', array($this,'add_tooltip_shortcode') );
 		}
 		add_shortcode( 'commentary', array('tccomment','shortcode') );
-		add_action( 'wp_enqueue_scripts', array($this,'enqueue_scripts') );
+		add_action( 'wp_enqueue_scripts', array('tccomment','enqueue_scripts') );
 	}
 	//
 	// SCRIPTS AND STYLES
 	//
-	public function enqueue_scripts() {
+	public static function enqueue_scripts() {
 		if ( apply_filters( 'tccomment_add_default_css', true) ) {
 			wp_enqueue_style(
 				'tccomment_style',
-				plugins_url( apply_filters( 'tccomment_default_css', 'fancy.css' ), __FILE__ ),
+				plugins_url( apply_filters( 'tccomment_default_css', 'default.css' ), __FILE__ ),
 				array(),
 				self::VERSION,
 				'all'
