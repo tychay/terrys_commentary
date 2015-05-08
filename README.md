@@ -1,4 +1,4 @@
-# Plugin Name #
+# Terry's Commentary #
 **Contributors:** tychay    
 **Donate link:** http://www.kiva.org/lender/tychay    
 **Tags:** tooltip, tool-tip, commentary, tip, tips    
@@ -20,6 +20,8 @@ and a `title` attribute with the tooltip content, just like you'd expect with
 regular HTML. It also supports shortcodes to generate them. Use the following
 shortcode:
 `[commentary text="INSERT TOOLTIP TEXT HERE"]INSERT TARGET TEXT HERE[/commentary]`
+
+For backward compatibility reasons, any tags with `class="commentary" title="tooltip"` are similarly enabled.
 
 ## Installation ##
 
