@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Terry's commentary
-Plugin URI: TBD
+Plugin URI: http://terrychay.com/article/this-is-my-tooltip.shtml
 Description: Make commentary a tooltip, support tooltips
 Version: 1.0
 Author: terry chay
