@@ -46,9 +46,7 @@ class tccomment {
 	 * @return [type] [description]
 	 */
 	public function run() {
-		if ( apply_filters( 'tccomment_add_tooltip_shortcode', false ) ) {
-			add_action( 'init', array($this,'add_tooltip_shortcode') );
-		}
+		add_action( 'init', array($this,'add_tooltip_shortcode') );
 		add_shortcode( 'commentary', array('tccomment','shortcode') );
 		add_action( 'wp_enqueue_scripts', array('tccomment','enqueue_scripts') );
 	}
@@ -77,7 +75,9 @@ class tccomment {
 	// TOOLTIPS 
 	//
 	public function add_tooltip_shortcode() {
-		add_shortcode( 'tooltip', array('tccomment','shortcode') );
+		if ( apply_filters( 'tccomment_add_tooltip_shortcode', false ) ) {
+			add_shortcode( 'tooltip', array('tccomment','shortcode') );
+		}
 	}
 	/**
 	 * Injects commentary (tooltip) in a correct HTML5 format so it has title

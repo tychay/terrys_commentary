@@ -34,10 +34,13 @@ can use filters in your themes `functions.php` to change the behaviors)
 
 = How do I make the fancy tooltips like the one in the [demo](http://osvaldas.info/examples/elegant-css-and-jquery-tooltip-responsive-mobile-friendly/) =
 
-Add the following line to your theme's `functions.php`:
+Add the following lines to your theme's `functions.php`:
 
 ```php
-add_filter( 'tccomment_default_css', 'fancy.css' );
+function you_already_know($ignore) {
+    return 'fancy.css';
+}
+add_filter( 'tccomment_default_css', 'you_already_know' );
 ```
 
 = I can style my own tooltips. I don't need the default or fancy stylesheet getting in the way. =
