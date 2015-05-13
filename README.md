@@ -12,8 +12,9 @@ Enables response/mobile-friendly text-based tooltip/commentary popups.
 
 ## Description ##
 
-This add a responsive and mobile-friendly tooltip popup in the vein of
-[this article](http://osvaldas.info/elegant-css-and-jquery-tooltip-responsive-mobile-friendly).
+This adds a responsive and mobile-friendly tooltip popup in the vein of
+[this article](http://osvaldas.info/elegant-css-and-jquery-tooltip-responsive-mobile-friendly). For an example (and an explanation why), please read
+the [introductory article](http://terrychay.com/article/this-is-my-tooltip.shtml).
 
 You can add a textual tooltip to anything simply by adding a `rel="tooltip"`
 and a `title` attribute with the tooltip content, just like you'd expect with
